@@ -3,12 +3,12 @@ pipeline{
     tools{
         maven 'local_maven'
     }
-    stages{
-        stage('Build'){
+    stages {
+        stage('Build') {
             steps {
                 sh 'mvn clean package'
            }
-           stage('test'){
+           stage('test') {
              steps {
                     echo 'Testing..'
                     'mvn test' '**/target/*.war'
