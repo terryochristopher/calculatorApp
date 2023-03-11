@@ -17,7 +17,7 @@ pipeline{
         }
         stage ('Deploy to tomcat server') {
             steps{
-                deploy adapters: "scp -o StrictHostKeyChecking=no [tomcat8(path: '', url: 'http://34.201.15.106:8080/')], contextPath: null, war: '**/*.war"
+                deploy adapters: "scp -o StrictHostKeyChecking=no [tomcat8, path: '', url: 'http://34.201.15.106:8080/')], contextPath: null, war: '**/*.war"
             }
         }
     }
