@@ -5,20 +5,15 @@ pipeline{
     }
     stages{
         stage ('Build'){
-           steps{
-               sh 'mvn clean package'
+            steps{
+                sh 'mvn clean package'
            }
            post{
                success{
                     echo "Archiving the Artifacts"
                     acrhiveArtifacts arttifacts: '**/target/*.war'
                }
-           }
-        }
-        stage ('Test') {
-            steps
-               echo 'Archiving the Artifacts..'
-               acrhiveArtifacts arttifacts: '**/target/*.war'
+            }
         }
         stage ('Deploy to tomcat server') {
             steps{
